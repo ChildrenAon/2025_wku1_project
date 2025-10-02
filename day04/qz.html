@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>기차표 예약</h1>
+
+        <h2>출발역</h2>
+        <div id="Select-start">
+            <input type="radio" name = station value="서울"/><label>서울</label>  
+            <input type="radio" name = station value="천안"/><label>천안</label>  
+            <input type="radio" name = station value="세종"/><label>세종</label>  
+            <input type="radio" name = station value="익산"/><label>익산</label>    
+        </div>
+
+        <h2>도착역</h2>
+        <div>
+            <select id="Select-end">
+                <option>광주</option>
+                <option>목포</option>
+                <option>여수</option>
+            </select>
+        </div>
+
+        <button id="btn-submit">제출</button>
+        
+        <p id="txt-result">결과: </p>
+
+        <script>
+            var Selectstart = document.getElementById("Select-start")
+            var Selectend = document.getElementById("Select-end")
+            var btnsubmit = document.getElementById("btn-submit")
+            var txtresult = document.getElementById("txt-result")
+
+            btnsubmit.addEventListener('click', ()=>{
+
+                var selectobj = document.querySelector("input[name='station']:checked")
+
+                console.log(selectobj.value)
+                console.log(Selectend.value)
+
+            
+            txtresult.innerText = "출발역: " + selectobj.value + " 도착역: " + Selectend.value
+        })
+        </script>
+
+
+
+    </body>
+    </html>
+
